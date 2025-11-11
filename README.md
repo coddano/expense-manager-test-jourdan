@@ -6,7 +6,7 @@ Test technique pour ReeWayy et AriMayi.
 
 1.  Clonez ce dépôt (n'oubliez pas de mettre votre URL Git) :
     ```bash
-    git clone [VOTRE_URL_GIT_ICI] expense-manager
+    git clone https://github.com/coddano/expense-manager-test-jourdan.git expense-manager
     cd expense-manager
     ```
 
