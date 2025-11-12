@@ -13,6 +13,9 @@ use App\Http\Requests\StoreExpenseRequest;
 use App\Http\Requests\RejectExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ExpenseController extends Controller
 {
@@ -52,6 +55,8 @@ class ExpenseController extends Controller
     public function store(StoreExpenseRequest $request)
     {
         $expense = Auth::user()->expenses()->create($request->validated());
+
+        $expense->refresh();
 
         return response()->json($expense, 201);
     }

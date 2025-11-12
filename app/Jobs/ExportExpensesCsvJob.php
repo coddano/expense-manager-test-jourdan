@@ -2,6 +2,11 @@
 
 namespace App\Jobs;
 
+use App\Models\Export;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+
 use Exception;
 use App\Models\Expense;
 use Illuminate\Support\Facades\Storage;
@@ -10,7 +15,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ExportExpensesCsvJob implements ShouldQueue
 {
-    use Queueable;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
      * Create a new job instance.
@@ -73,7 +78,7 @@ class ExportExpensesCsvJob implements ShouldQueue
             // 7b. En cas d'erreur : C'EST RATÉ !
             $this->export->status = 'FAILED';
             $this->export->save();
-            // On pourrait logguer l'erreur $e
+
         }
     }
 }
