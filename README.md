@@ -34,7 +34,7 @@ Test technique pour ReeWayy et AriMayi.
 
 ## 2. Lancement
 
-Le projet expose deux interfaces : une API REST (pour Postman/Insomnia) et un front Blade minimal (pour le navigateur).
+Le projet expose deux interfaces : une API REST (pour Postman) et un front Blade minimal (pour le navigateur).
 
 ### API & Serveur Local
 
@@ -59,13 +59,13 @@ Les données de test sont générées via les seeders fournies dans le projet. V
 
 Voici les données de test par défaut :
 | Rôle       | Nom           | Email              | Mot de passe |
-| Rôle       | Nom           | Email              | Mot de passe |
+|------------|---------------|--------------------|--------------|
 |------------|---------------|--------------------|--------------|
 | Manager    | Manager Admin | manager@demo.com   | password123  |
 | Employé    | Employee Alice | alice@demo.com     | password123  |
 | Employé    | Employee Bob   | bob@demo.com       | password123  | 
 
-## 4. Vues disponibles :
+## 4. Vues disponibles
 - Tableau de bord Manager : http://127.0.0.1:8000/manager
 - Tableau de bord Employé (Bob) : http://127.0.0.1:8000/employee/2
 - Tableau de bord Employé (Alice) : http://127.0.0.1:8000/employee/3
