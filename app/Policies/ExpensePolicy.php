@@ -51,7 +51,7 @@ class ExpensePolicy
      * Seul le manager peut gérer les depenses
      */
 
-    public function manage(User $user): bool
+    public function manage(User $user, ?Expense $expense = null): bool
     {
         return $user->role === 'MANAGER';
     }

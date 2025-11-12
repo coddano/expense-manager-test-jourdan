@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Expense;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RejectExpenseRequest extends FormRequest
@@ -22,7 +23,7 @@ class RejectExpenseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'reason' =>'required|string|min:5',
+            'reason' => 'nullable|string|min:5',
         ];
     }
 }

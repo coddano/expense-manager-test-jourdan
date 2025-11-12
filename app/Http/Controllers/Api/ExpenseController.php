@@ -27,7 +27,7 @@ class ExpenseController extends Controller
     {
         $user = Auth::user();
 
-        $query = Expense::query()->with('user:id, name');
+        $query = Expense::query()->with('user:id,name');
 
         if ($user->role ==='MANAGER') {
             //Le manager voit tout

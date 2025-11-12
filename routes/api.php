@@ -2,7 +2,9 @@
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ExpenseController; // Ajoute ça
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+use App\Http\Controllers\Api\ExpenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +16,13 @@ use App\Http\Controllers\Api\ExpenseController; // Ajoute ça
 Route::post('/login', function (Request $request){
     $request->validate([
         'email' => 'required|email',
-        'password' => 'required|'
+        'password' => 'required'
     ]);
 
     $user = User::where('email', $request->email)->first();
 
     if (! $user || ! Hash::check($request->password, $user->password)) {
-        throw ValidateException::withMessages([
+        throw ValidationException::withMessages([
             'email' => ['Ces identifiants ne sont pas corrects.'],
         ]);
     }

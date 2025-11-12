@@ -27,7 +27,7 @@ class StoreExpenseRequest extends FormRequest
             'title' => 'required|max:255',
             'amount' => 'required|numeric',
             'spent_at' => 'required|date',
-            'category' => 'nullable|string|in:MEAL, TRAVEL, HOTEL, OTHER',
+            'category' => 'nullable|string|in:MEAL,TRAVEL,HOTEL,OTHER',
         ];
     }
 }
